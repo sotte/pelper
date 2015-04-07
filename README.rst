@@ -55,7 +55,8 @@ TODO
   * improve doc: use sphinx? is it worth it?
 
   * Install
-    * conda?
+    * pip
+    * conda
 
   * add badges
     * travis

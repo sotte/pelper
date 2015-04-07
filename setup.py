@@ -16,7 +16,6 @@ setup(
     long_description=read("README.rst"),
     author="Stefan Otte",
     url="https://github.com/sotte/pelper",
-    download_url="https://github.com/sotte/tcr",
     author_email="stefan.otte@gmail.com",
     version="0.0.1",
     install_requires=[],
