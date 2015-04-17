@@ -10,8 +10,11 @@ pelper - python helper functions
 
 ``pelper`` -- python helper functions to ease measuring, ignoring, caching, ...
 
-``pelper`` contains useful helper functions, decorators, context managers - all
-that stuff that make the python life a bit easier.
+``pelper`` contains useful helper functions, decorators, context managers
+- all the stuff that make the python life a tiny bit easier.
+It has no dependencies,
+has a coverage of 100%,
+and is well documented.
 
 Examples
 ========
@@ -76,7 +79,5 @@ Run the tests::
 
 TODO
 ====
-
-- improve doc: use sphinx? is it worth it? if so use readthedocs
 
 - install via pip and conda
