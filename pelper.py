@@ -11,6 +11,61 @@ import time
 
 
 ###############################################################################
+def pipe(data, *functions):
+    """pipe data trough a pipeline of functions.
+
+    Think of unix pipes for python or elixir's pipes
+
+    Examples:
+
+    Of course you can use lambda functions
+    >>> from math import ceil, sqrt
+    >>> pipe("2.1", float, ceil, int, lambda x: x*x, sqrt)
+    3.0
+
+    Genrate your own partial functions with lambda
+    >>> pipe("2.1", float, ceil, int, lambda x: pow(x, 2), sqrt)
+    3.0
+
+    >>> pipe("2.1", float, ceil, int, lambda x: pow(x, 2), sqrt)
+    3.0
+
+    There is a shortcut: tuples are interpreted as as
+    ``(functions, arguments, ...)``. The data passed from the previous function
+    is the first argument of the punction, followed by the arguments from the
+    tuple.
+    >>> pipe("2.1", float, ceil, int, (pow, 2), sqrt)
+    3.0
+
+    To make this clearer ``pipe(3, (pow, 2))`` is equivalent to ``pow(3, 2)``.
+    Of course you can pass multiple arguments with the tuple
+    >>> pipe(3, (pow, 2, 8))  # pow(2, 3, 8) -> pow(2, 3) % 8
+    1
+
+    It can be convenient to use this notation if the function names are longer
+    >>> text = "atababsatsatsastatbadstssdhhhnbb"
+    >>> pipe(text,
+    ...      set,
+    ...      sorted)
+    ['a', 'b', 'd', 'h', 'n', 's', 't']
+
+    It's also possible to use named arguments:
+    >>> pipe(text, set, (sorted, {"reverse": True}))
+    ['t', 's', 'n', 'h', 'd', 'b', 'a']
+
+    """
+    for f in functions:
+        if isinstance(f, tuple):
+            if isinstance(f[1], dict):
+                data = f[0](data, **f[1])
+            else:
+                data = f[0](data, *f[1:])
+        else:
+            data = f(data)
+    return data
+
+
+###############################################################################
 class print_duration(object):
     """`print_duration` is a "ContextDecorator" to measure the execution time
     of the given function or context.
@@ -131,7 +186,7 @@ def ignored(*exception):
 
     Example:
     >>> with ignored(OSError):
-    ...     raise OSError
+    ...     raise OSError  # this is ignored!
 
 
     """
