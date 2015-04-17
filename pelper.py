@@ -199,5 +199,4 @@ def ignored(*exception):
 ###############################################################################
 if __name__ == "__main__":
     import doctest
-    # print(doctest.testmod(verbose=True))
     print(doctest.testmod())
