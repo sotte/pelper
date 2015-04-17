@@ -16,30 +16,40 @@ that stuff that make the python life a bit easier.
 Examples
 ========
 
-::
+Measure the duration of a function::
 
-    >>> # measure duration of a function
-    >>> from pelper import print_duration
-    >>> @print_duration(out=mylogger)
-    ... def f(n): pass
+    from pelper import print_duration
+    @print_duration()
+    def f(n): pass
 
-    >>> # measure duration of a context
-    >>> from pelper import print_duration
-    >>> with print_duration(out=mylogger):
-    ...     range(4)
 
-    >>> # ignore exceptions
-    >>> from pelper import ignored
-    >>> with ignored(OSError):
-    ...     raise OSError()
+Measure duration of a context::
 
-    >>> # cache already computed results of functions
-    >>> from pelper import cache
-    >>> @cache
-    ... def fib(n):
-    ...     return 1 if n < 2 else fib(n-1) + fib(n-2)
-    >>> f(5)
-    8
+    from pelper import print_duration
+    with print_duration():
+        range(4)
+
+Ignore exceptions::
+
+    from pelper import ignored
+    with ignored(OSError):
+        raise OSError()  # this is ignored
+
+Cache already computed results of functions::
+
+    from pelper import cache
+    @cache
+    def fib(n):
+        return 1 if n < 2 else fib(n-1) + fib(n-2)
+
+    f(500)  # this would run for quite a wile without the cache decorator
+
+Pipe data through unix-like pipes::
+
+    from pelper import pipe
+    pipe("some datat, some data",
+         set,
+         (sorted, {"reverse": True}))
 
 
 Installation
