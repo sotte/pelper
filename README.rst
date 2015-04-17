@@ -77,15 +77,6 @@ Run the tests::
 TODO
 ====
 
-  * add CONTRIBUTING.rst
+- improve doc: use sphinx? is it worth it? if so use readthedocs
 
-  * improve doc: use sphinx? is it worth it?
-
-  * Install
-    * pip
-    * conda
-
-  * add badges
-    * travis
-    * read the docs
-    * pypi
+- install via pip and conda
