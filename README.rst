@@ -2,6 +2,12 @@
 pelper - python helper functions
 ################################
 
+.. image:: https://travis-ci.org/sotte/pelper.svg?branch=master
+    :target: https://travis-ci.org/sotte/pelper
+
+.. image:: https://coveralls.io/repos/sotte/pelper/badge.svg?branch=master
+    :target: https://coveralls.io/r/sotte/pelper?branch=master
+
 ``pelper`` -- python helper functions to ease measuring, ignoring, caching, ...
 
 ``pelper`` contains useful helper functions, decorators, context managers - all
