@@ -2,11 +2,7 @@
 pelper - python helper functions
 ################################
 
-.. image:: https://travis-ci.org/sotte/pelper.svg?branch=master
-    :target: https://travis-ci.org/sotte/pelper
-
-.. image:: https://coveralls.io/repos/sotte/pelper/badge.svg?branch=master
-    :target: https://coveralls.io/r/sotte/pelper?branch=master
+|build_status| |coveralls| |docs|
 
 ``pelper`` -- python helper functions to ease measuring, ignoring, caching, ...
 
@@ -81,3 +77,19 @@ TODO
 ====
 
 - install via pip and conda
+
+
+.. ============================================================================
+.. Links
+
+.. |build_status| image:: https://travis-ci.org/sotte/pelper.svg?branch=master
+    :alt: build status
+    :target: https://travis-ci.org/sotte/pelper
+
+.. |coveralls| image:: https://coveralls.io/repos/sotte/pelper/badge.svg?branch=master
+    :alt: coverage
+    :target: https://coveralls.io/r/sotte/pelper?branch=master
+
+.. |docs| image:: https://readthedocs.org/projects/pelper/badge/?version=latest
+    :alt: read the docs
+    :target: http://pelper.readthedocs.org/en/latest/
