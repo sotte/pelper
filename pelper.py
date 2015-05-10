@@ -92,9 +92,8 @@ def take(n, iterable):
         iterable (iterable): the iterable to take from.
 
     Examples:
-
-    >>> take(2, range(5))
-    [0, 1]
+        >>> take(2, range(5))
+        [0, 1]
     """
     return list(islice(iterable, n))
 
