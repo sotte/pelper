@@ -62,6 +62,16 @@ Pipe data through unix-like pipes
          (sorted, {"reverse": True}))
 
 
+Take `n` elements from iterables (useful if you can't use the square bracket
+notation, e.g., if you're using pipe)
+
+.. code:: python
+
+    from pelper import take
+    take(2, range(5))
+
+
+
 Installation
 ============
 
