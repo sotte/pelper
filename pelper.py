@@ -7,6 +7,7 @@
 from __future__ import print_function
 from contextlib import contextmanager
 from functools import wraps
+from itertools import islice
 import time
 
 
@@ -80,6 +81,22 @@ def pipe(data, *functions):
         else:
             data = f(data)
     return data
+
+
+###############################################################################
+def take(n, iterable):
+    """Return first n items of the iterable as a list
+
+    Args:
+        n (int): the number of elements to take.
+        iterable (iterable): the iterable to take from.
+
+    Examples:
+
+    >>> take(2, range(5))
+    [0, 1]
+    """
+    return list(islice(iterable, n))
 
 
 ###############################################################################
