@@ -70,6 +70,13 @@ notation, e.g., if you're using pipe)
     from pelper import take
     take(2, range(5))
 
+Take the `n`-th elements from iterables (useful if you can't use the square bracket
+notation, e.g., if you're using pipe)
+
+.. code:: python
+
+    from pelper import nth
+    nth(2, range(5))
 
 
 Installation

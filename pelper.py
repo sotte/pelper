@@ -100,6 +100,32 @@ def take(n, iterable):
 
 
 ###############################################################################
+def nth(iterable, n, default=None):
+    """Returns the nth item or a default value
+
+    Return None if there is no nth element (or default if specified).
+
+    Args:
+        iterable (iterable): the iterable to take from.
+        n (int): the nth elements to take.
+        default (whatever): return default if nothing found
+
+    Examples:
+        >>> nth(range(5), 2)
+        2
+
+        >>> nth(range(5), 2, default="Hello")
+        2
+
+        >>> nth(range(5), 6)
+
+        >>> nth(range(5), 6, default="Hello")
+        'Hello'
+    """
+    return next(islice(iterable, n, None), default)
+
+
+###############################################################################
 class print_duration(object):
     """`print_duration` is a "ContextDecorator" to measure the execution time
     of the given function or context.
