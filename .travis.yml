@@ -4,6 +4,6 @@ python:
 install:
   - pip install coveralls
 script:
-  - coverage run pelper.py
+  - coverage run pelper/pelper.py
 after_success:
   - coveralls
