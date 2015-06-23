@@ -85,15 +85,26 @@ Installation
 ``pelper`` is only one file and has no dependencies.
 You can simply drop ``pelper.py`` into your project and use it.
 
-Run the tests::
+Or install it from pypi by running::
 
-    python pelper.py
+    pip install pelper
+
+Or install it from source by running::
+
+    python setup.py install
+
+Tests
+=====
+
+``pelper`` uses doctest extensively.  You can run the tests with::
+
+    python pelper/pelper.py
 
 
 TODO
 ====
 
-- install via pip and conda
+- install conda
 
 
 .. ============================================================================
