@@ -45,6 +45,15 @@ bracket notation, e.g., if you're using pipe)
     nth(range(5), 2)
 
 
+Flatten arbitrarily nested lists:
+
+.. code:: python
+
+    from pelper import flatten
+    >>> flatten([1, [2, 2, [3, 3]]])
+    [1, 2, 2, 3, 3]
+
+
 Measure the duration of a function:
 
 .. code:: python
