@@ -156,14 +156,14 @@ class print_duration(object):
 
         >>> with print_duration():  #doctest: +ELLIPSIS
         ...     # do something
-        ...     range(5)
+        ...     list(range(5))
         [0, 1, 2, 3, 4]
         Duration 0...s
 
         Specify a message:
 
         >>> with print_duration(msg="range test"):  #doctest: +ELLIPSIS
-        ...    range(5)
+        ...    list(range(5))
         [0, 1, 2, 3, 4]
         range test 0...s
 
@@ -171,21 +171,21 @@ class print_duration(object):
 
         >>> import logging
         >>> log = logging.getLogger()
-        >>> with print_duration(out=log.warning):
-        ...    range(5)
+        >>> with print_duration(out=log.warning):  #doctest: +ELLIPSIS
+        ...    list(range(5))
         [0, 1, 2, 3, 4]
 
         With message and logger:
 
         >>> with print_duration("range test", out=log.warning):
-        ...     range(5)
+        ...     list(range(5))
         [0, 1, 2, 3, 4]
 
         Use print_duration as decorator:
 
         >>> @print_duration("f took")
         ... def f():
-        ...     range(5)
+        ...     list(range(5))
         >>> f()  #doctest: +ELLIPSIS
         f took 0...s
 
