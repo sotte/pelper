@@ -7,6 +7,8 @@ from functools import wraps
 from itertools import islice
 import time
 
+__version__ = "0.0.3"
+
 
 ###############################################################################
 def pipe(data, *functions):
