@@ -15,6 +15,24 @@
 import sys
 import os
 
+
+import sphinx.environment
+from docutils.utils import get_source_line
+
+
+###############################################################################
+# monkey patch sphinx to suppress "nonlocal image URI found" warning
+# http://stackoverflow.com/questions/12772927/specifying-an-online-image-in-sphinx-restructuredtext-format
+# https://github.com/SuperCowPowers/workbench/issues/172
+def _warn_node(self, msg, node):
+    if not msg.startswith('nonlocal image URI found:'):
+        self._warnfunc(msg, '%s:%s' % get_source_line(node))
+
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
+
+
+###############################################################################
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
