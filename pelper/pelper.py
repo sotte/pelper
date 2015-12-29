@@ -27,6 +27,9 @@ def pipe(data, *functions):
         data (whatever): the data that is passed into the first function.
         functions (callables): functions that create the pipeline.
 
+    Returns:
+        The result of your pipeline.
+
     Examples:
         ``pipe`` allows you to turn something which is hard to read:
 
@@ -95,6 +98,9 @@ def take(iterable, n):
         iterable (iterable): the iterable to take from.
         n (int): the number of elements to take.
 
+    Returns:
+        list: the first n elements of iterable.
+
     Examples:
         >>> take(range(5), 2)
         [0, 1]
@@ -115,6 +121,9 @@ def nth(iterable, n, default=None):
         iterable (iterable): the iterable to take from.
         n (int): the n-th elements to take.
         default (whatever): return default if nothing found
+
+    Returns:
+        The n-th element of iterable.
 
     Examples:
         >>> nth(range(5), 2)
@@ -224,6 +233,9 @@ def cache(f):
     previous calls.
     Cache is really useful for recursive functions!
 
+    Args:
+        f (function): the function to cache.
+
     Warning:
         Only use this with pure functions!
 
@@ -283,6 +295,9 @@ def flatten(nested_list):
 
     Args:
         nested_list (iterable): arbitrarily nested list.
+
+    Returns:
+        list: a flattened list.
 
     Examples:
 
