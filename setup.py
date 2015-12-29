@@ -2,7 +2,8 @@
 # encoding: utf-8
 
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
+
 
 with open(os.path.join(os.path.dirname(__file__), "README.rst")) as f:
     long_description = f.read()
@@ -22,9 +23,9 @@ setup(
     license="MIT",
 
     url="https://github.com/sotte/pelper",
-    download_url="https://github.com/sotte/NAME",
+    download_url="https://github.com/sotte/pelper",
 
-    keywords="development heper decorator contextmanager",
+    keywords="development heper functional decorator contextmanager",
 
     packages=["pelper"],
     # install_requires=["sphinxcontrib-napoleon", ],
