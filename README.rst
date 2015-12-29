@@ -5,7 +5,7 @@ pelper - python helper functions
 |build_status| |coveralls| |docs|
 
 ``pelper`` -- python helper functions to ease measuring, ignoring, caching,
-piping, functional helpers, ...
+piping, functional helpers, and more for python 2.7, 3.4, and 3.5.
 
 ``pelper`` contains useful helper functions, decorators, context managers
 - all the things that make your python life a tiny bit easier.
@@ -108,12 +108,17 @@ You can run the tests with::
 
     python pelper/pelper.py
 
+or::
 
-TODO
-====
+    python -m doctest pelper/pelper.py
 
-- Install conda
-- There are lots of nice decorators: https://wiki.python.org/moin/PythonDecoratorLibrary
+or::
+
+    python3 pelper/pelper.py
+
+or::
+
+    python3 -m doctest pelper/pelper.py
 
 
 .. ============================================================================
