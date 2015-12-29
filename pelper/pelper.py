@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 # encoding: utf-8
-# There are lots of nice decorators:
-# https://wiki.python.org/moin/PythonDecoratorLibrary
-
 ###############################################################################
 from __future__ import print_function
 from contextlib import contextmanager
@@ -16,6 +13,8 @@ def pipe(data, *functions):
     """pipe data trough a pipeline of functions.
 
     Think of unix pipes or elixir's pipes.
+    ``pipe`` assumes that data is the first argument of a function.
+
     ``pipe`` tries to be smart and automatically cerates partial functions if
     you pass a tuple instead of a callable:
 
@@ -29,9 +28,14 @@ def pipe(data, *functions):
         functions (callables): functions that create the pipeline.
 
     Examples:
-        Of course you can use lambda functions:
+        ``pipe`` allows you to turn something which is hard to read:
 
         >>> from math import ceil, sqrt
+        >>> sqrt(pow(int(ceil(float("2.1"))), 2))
+        3.0
+
+        into something that is easy to read:
+
         >>> pipe("2.1", float, ceil, int, lambda x: x*x, sqrt)
         3.0
 
@@ -40,7 +44,7 @@ def pipe(data, *functions):
         >>> pipe("2.1", float, ceil, int, lambda x: pow(x, 2), sqrt)
         3.0
 
-        There is a shortcut: tuples are interpreted as as
+        But there is a shortcut: tuples are interpreted as as
         ``(functions, arguments, ...)``.
         The data passed from the previous function is the first argument of the
         punction, followed by the arguments from the tuple.
@@ -55,7 +59,7 @@ def pipe(data, *functions):
         >>> pipe(3, (pow, 2, 8))  # pow(2, 3, 8) -> pow(2, 3) % 8
         1
 
-        It can be convenient to use the following  notation if the function
+        It can be convenient to use the following notation if the function
         names are longer:
 
         >>> text = "atababsatsatsastatbadstssdhhhnbb"
@@ -64,7 +68,7 @@ def pipe(data, *functions):
         ...      sorted)
         ['a', 'b', 'd', 'h', 'n', 's', 't']
 
-        It's also possible to use named arguments:
+        It's also possible to use named arguments by using a dict:
 
         >>> pipe(text,
         ...      set,
@@ -84,29 +88,32 @@ def pipe(data, *functions):
 
 
 ###############################################################################
-def take(n, iterable):
+def take(iterable, n):
     """Return first n items of the iterable as a list
 
     Args:
-        n (int): the number of elements to take.
         iterable (iterable): the iterable to take from.
+        n (int): the number of elements to take.
 
     Examples:
-        >>> take(2, range(5))
+        >>> take(range(5), 2)
         [0, 1]
+
+        >>> take(range(5), 0)
+        []
     """
     return list(islice(iterable, n))
 
 
 ###############################################################################
 def nth(iterable, n, default=None):
-    """Returns the nth item or a default value
+    """Returns the n-th item or a default value
 
     Return None if there is no nth element (or default if specified).
 
     Args:
         iterable (iterable): the iterable to take from.
-        n (int): the nth elements to take.
+        n (int): the n-th elements to take.
         default (whatever): return default if nothing found
 
     Examples:

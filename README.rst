@@ -4,55 +4,20 @@ pelper - python helper functions
 
 |build_status| |coveralls| |docs|
 
-``pelper`` -- python helper functions to ease measuring, ignoring, caching, ...
+``pelper`` -- python helper functions to ease measuring, ignoring, caching,
+piping, functional helpers, ...
 
 ``pelper`` contains useful helper functions, decorators, context managers
-- all the stuff that make the python life a tiny bit easier.
-It has no dependencies,
+- all the things that make your python life a tiny bit easier.
+``pelper`` has no dependencies,
 has a coverage of 100%,
 and is well documented.
+
 
 Examples
 ========
 
-Measure the duration of a function:
-
-.. code:: python
-
-    from pelper import print_duration
-    @print_duration()
-    def f(n):
-        pass
-
-
-Measure duration of a context:
-
-.. code:: python
-
-    from pelper import print_duration
-    with print_duration():
-        range(4)
-
-Ignore exceptions:
-
-.. code:: python
-
-    from pelper import ignored
-    with ignored(OSError):
-        raise OSError()  # this is ignored
-
-Cache already computed results of functions:
-
-.. code:: python
-
-    from pelper import cache
-    @cache
-    def fib(n):
-        return 1 if n < 2 else fib(n-1) + fib(n-2)
-
-    f(500)  # this would run for quite a wile without the cache decorator
-
-Pipe data through unix-like pipes
+Pipe data through unix-like/elixir-like pipes:
 
 .. code:: python
 
@@ -68,15 +33,56 @@ notation, e.g., if you're using pipe)
 .. code:: python
 
     from pelper import take
-    take(2, range(5))
+    take("hello world", 5)
 
-Take the `n`-th elements from iterables (useful if you can't use the square bracket
-notation, e.g., if you're using pipe)
+
+Take the `n`-th elements from iterables (useful if you can't use the square
+bracket notation, e.g., if you're using pipe)
 
 .. code:: python
 
     from pelper import nth
-    nth(2, range(5))
+    nth(range(5), 2)
+
+
+Measure the duration of a function:
+
+.. code:: python
+
+    from pelper import print_duration
+    @print_duration()
+    def f(n):
+        pass
+
+
+Measure the duration of a context:
+
+.. code:: python
+
+    from pelper import print_duration
+    with print_duration():
+        range(4)
+
+
+Ignore exceptions:
+
+.. code:: python
+
+    from pelper import ignored
+    with ignored(OSError):
+        raise OSError()  # this is ignored
+
+
+Cache already computed results of functions:
+
+.. code:: python
+
+    from pelper import cache
+    @cache
+    def fib(n):
+        return 1 if n < 2 else fib(n-1) + fib(n-2)
+
+    f(500)  # this would run for quite a wile without the cache decorator
 
 
 Installation
@@ -91,7 +97,8 @@ Or install it from pypi by running::
 
 Or install it from source by running::
 
-    python setup.py install
+    pip install .
+
 
 Tests
 =====
@@ -104,7 +111,8 @@ Tests
 TODO
 ====
 
-- install conda
+- Install conda
+- There are lots of nice decorators: https://wiki.python.org/moin/PythonDecoratorLibrary
 
 
 .. ============================================================================
