@@ -2,7 +2,7 @@
 pelper - python helper functions
 ################################
 
-|build_status| |coveralls| |docs|
+|docs| |coveralls| |build_status| |pypi| |github|
 
 ``pelper`` -- python helper functions to ease measuring, ignoring, caching,
 piping, functional helpers, and more for python 2.7, 3.4, and 3.5.
@@ -147,3 +147,9 @@ or::
 .. |docs| image:: https://readthedocs.org/projects/pelper/badge/?version=latest
     :alt: read the docs
     :target: http://pelper.readthedocs.org/en/latest/
+
+.. |pypi| image:: https://badge.fury.io/py/pelper.svg
+    :target: https://badge.fury.io/py/pelper
+
+.. |github| image:: https://badge.fury.io/gh/sotte%2Fpelper.svg
+    :target: https://badge.fury.io/gh/sotte%2Fpelper
