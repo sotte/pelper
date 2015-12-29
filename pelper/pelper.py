@@ -278,6 +278,39 @@ def ignored(*exception):
 
 
 ###############################################################################
+def flatten(nested_list):
+    """Flatten arbitrarily nested lists.
+
+    Args:
+        nested_list (iterable): arbitrarily nested list.
+
+    Examples:
+
+        >>> flatten(range(5))
+        [0, 1, 2, 3, 4]
+
+        >>> flatten([1, [2, 2]])
+        [1, 2, 2]
+
+        >>> flatten([1, [2, 2], [3, 3, 3, [4, 4, 4, 4,], 3], 1])
+        [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 3, 1]
+
+        Note that strings are not flattened:
+
+        >>> flatten(["one", ["two", "three", ["four"]]])
+        ['one', 'two', 'three', 'four']
+
+    """
+    if not hasattr(nested_list, "__iter__") or isinstance(nested_list, str):
+        return [nested_list]
+
+    result = []
+    for e in nested_list:
+        result.extend(flatten(e))
+    return result
+
+
+###############################################################################
 if __name__ == "__main__":
     import doctest
     print(doctest.testmod())
