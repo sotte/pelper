@@ -103,7 +103,8 @@ Or install it from source by running::
 Tests
 =====
 
-``pelper`` uses doctest extensively.  You can run the tests with::
+``pelper`` uses doctest extensively and has |coveralls|.
+You can run the tests with::
 
     python pelper/pelper.py
 
