@@ -22,9 +22,7 @@ Pipe data through unix-like/elixir-like pipes:
 .. code:: python
 
     >>> from pelper import pipe
-    >>> pipe("some datat, some data",
-    >>>      set,
-    >>>      (sorted, {"reverse": True}))
+    >>> pipe("some datat, some data", set, (sorted, {"reverse": True}))
     ['t', 's', 'o', 'm', 'e', 'd', 'a', ',', ' ']
 
 
@@ -36,7 +34,7 @@ notation, e.g., if you're using pipe)
 
     >>> from pelper import take
     >>> take("hello world", 5)
-    'hello'
+    ['h', 'e', 'l', 'l', 'o']
 
 
 Take the `n`-th elements from iterables (useful if you can't use the square
@@ -64,8 +62,7 @@ Measure the duration of a function:
 
     >>> from pelper import print_duration
     >>> @print_duration()
-    >>> def f(n):
-    >>>     pass
+    ...  def f(n): pass
 
 
 Measure the duration of a context:
@@ -74,7 +71,7 @@ Measure the duration of a context:
 
     >>> from pelper import print_duration
     >>> with print_duration():
-    >>>     range(4)
+    ...     range(4)
 
 
 Ignore exceptions:
@@ -83,7 +80,7 @@ Ignore exceptions:
 
     >>> from pelper import ignored
     >>> with ignored(OSError):
-    >>>     raise OSError()  # this is ignored
+    ...     raise OSError()  # this is ignored
 
 
 Cache already computed results of functions:
@@ -93,7 +90,7 @@ Cache already computed results of functions:
     >>> from pelper import cache
     >>> @cache
     >>> def fib(n):
-    >>>     return 1 if n < 2 else fib(n-1) + fib(n-2)
+    ...     return 1 if n < 2 else fib(n-1) + fib(n-2)
     >>> f(500)  # this would run for quite a wile without the cache decorator
 
 
