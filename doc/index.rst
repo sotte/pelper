@@ -18,6 +18,11 @@ TODO add a list of functions.
 
 TODO generate index etc
 
+.. doctest::
+
+    >>> 2 + 2
+    4
+
 Indices and tables
 ==================
 
