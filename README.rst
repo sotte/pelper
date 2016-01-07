@@ -94,6 +94,15 @@ Cache already computed results of functions:
     >>> f(500)  # this would run for quite a wile without the cache decorator
 
 
+Easier printing and formating:
+
+.. code:: python
+
+    >>> from pelper import printf
+    >>> printf("Hello {name}, I'm {something}", name="Alan", something="world")
+    Hello Alan, I'm world
+
+
 Installation
 ============
 
