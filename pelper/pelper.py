@@ -302,7 +302,6 @@ def flatten(nested_list):
         list: a flattened list.
 
     Examples:
-
         >>> flatten(range(5))
         [0, 1, 2, 3, 4]
 
@@ -333,26 +332,27 @@ def printf(string, *args, **kwargs):
 
 
     Examples:
+        Use printf like print without any arguments:
+        >>> from pelper import printf
+        >>> printf('text')
+        text
 
-    Use printf like print without any arguments:
-    >>> from pelper import printf
-    >>> printf('text')
-    text
+        With args:
+        >>> printf('text {} {}', 'alan', 'bob')
+        text alan bob
 
-    With args:
-    >>> printf('text {} {}', 'alan', 'bob')
-    text alan bob
+        >>> printf('text {1} {0}', 'alan', 'bob')
+        text bob alan
 
-    >>> printf('text {1} {0}', 'alan', 'bob')
-    text bob alan
+        With named arguments:
+        >>> printf('text {first} {second}', first='alan', second='bob')
+        text alan bob
 
-    With named arguments:
-    >>> printf('text {first} {second}', first='alan', second='bob')
-    text alan bob
+        Unpacking a dict:
+        >>> printf('text {first} {second}',
+        ...    **{'first': 'alan', 'second': 'bob'})
+        text alan bob
 
-    Unpacking a dict:
-    >>> printf('text {first} {second}', **{'first': 'alan', 'second': 'bob'})
-    text alan bob
     """
     print(string.format(*args, **kwargs))
 
