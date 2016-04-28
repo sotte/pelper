@@ -150,9 +150,9 @@ or::
     :alt: coverage
     :target: https://coveralls.io/r/sotte/pelper?branch=master
 
-.. |docs| image:: https://readthedocs.org/projects/pelper/badge/?version=latest
-    :alt: read the docs
-    :target: http://pelper.readthedocs.org/en/latest/
+.. image:: https://readthedocs.org/projects/pelper/badge/?version=latest
+    :alt: Documentation Status
+    :target: https://pelper.readthedocs.io/en/latest/?badge=latest
 
 .. |pypi| image:: https://badge.fury.io/py/pelper.svg
     :target: https://badge.fury.io/py/pelper
