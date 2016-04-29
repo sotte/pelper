@@ -118,25 +118,41 @@ Or install it from source by running::
     pip install .
 
 
+Development
+===========
+
+Use virtualenv_ for working on ``pelper``.
+Install the dev requrirements via::
+
+    pip install -e requirements-dev.txt
+
 Tests
-=====
+-----
 
-``pelper`` uses doctest extensively and has |coveralls|.
-You can run the tests with::
+``pelper`` uses doctest, ``py.test``, and ``tox`` for testing.
+It also has |coveralls| to report coverage.
 
-    python pelper/pelper.py
+You can run the tests for all supported versions of python and build and test
+the docs::
 
-or::
+    tox
 
-    python -m doctest pelper/pelper.py
+Run only the tests for the specified version of python::
 
-or::
+    tox -e py27,py34,py35
 
-    python3 pelper/pelper.py
+Alternatively just run tests for the current version of python::
 
-or::
+    py.test
 
-    python3 -m doctest pelper/pelper.py
+
+Docs
+----
+
+Build the docs via::
+
+    cd docs
+    sphinx html
 
 
 .. ============================================================================
@@ -159,3 +175,6 @@ or::
 
 .. |github| image:: https://badge.fury.io/gh/sotte%2Fpelper.svg
     :target: https://badge.fury.io/gh/sotte%2Fpelper
+
+
+.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
