@@ -3,11 +3,16 @@ build/
 *.pyc
 *.egg-info
 __pycache__
+.cache
+
 .ipynb_checkpoints
-.coverage
+
+# doc stuff
 doc/_build
+doc/envtmpdir/
+
+# ci stuff
+shippable/
+.coverage
 .venv
 .tox
-shippable/
-
-.cache
