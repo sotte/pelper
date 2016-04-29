@@ -8,3 +8,6 @@ __pycache__
 doc/_build
 .venv
 .tox
+shippable/
+
+.cache

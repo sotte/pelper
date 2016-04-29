@@ -1,0 +1,13 @@
+# Language setting
+language: python
+
+# Version number
+python:
+  - 2.7
+  - 3.4
+  - 3.5
+
+build:
+  ci:
+    - pip install -r requirements-dev.txt
+    - py.test --junitxml=shippable/testresults/unittests.xml --cov-report xml --cov-report term --cov pelper
