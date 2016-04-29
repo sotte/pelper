@@ -246,8 +246,8 @@ def cache(f):
         >>> def fib(n):
         ...     return 1 if n < 2 else fib(n-1) + fib(n-2)
         >>> with print_duration():  #doctest: +ELLIPSIS
-        ...     fib(25)
-        121393
+        ...     fib(24)
+        75025
         Duration 0...s
 
         >>> # the cached version is much faster
@@ -255,8 +255,8 @@ def cache(f):
         ... def fib(n):
         ...     return 1 if n < 2 else fib(n-1) + fib(n-2)
         >>> with print_duration():  #doctest: +ELLIPSIS
-        ...     fib(25)
-        121393
+        ...     fib(24)
+        75025
         Duration 0...s
 
     """
