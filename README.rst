@@ -2,7 +2,7 @@
 pelper - python helper functions
 ################################
 
-|docs| |coveralls| |build_status| |pypi| |github|
+|docs| |coverage_status| |build_status| |pypi| |github|
 
 ``pelper`` -- python helper functions to ease measuring, ignoring, caching,
 piping, functional helpers, and more for python 2.7, 3.4, and 3.5.
@@ -130,7 +130,7 @@ Tests
 -----
 
 ``pelper`` uses doctest, ``py.test``, and ``tox`` for testing.
-It also has |coveralls| to report coverage.
+It also has |coverage_status| coverage.
 
 You can run the tests for all supported versions of python and build and test
 the docs::
@@ -158,23 +158,24 @@ Build the docs via::
 .. ============================================================================
 .. Links
 
-.. |build_status| image:: https://travis-ci.org/sotte/pelper.svg?branch=master
-    :alt: build status
-    :target: https://travis-ci.org/sotte/pelper
+.. |build_status| image:: https://api.shippable.com/projects/572309a32a8192902e1e65c7/badge?branch=master
+    :alt: Build status
+    :target: https://app.shippable.com/projects/572309a32a8192902e1e65c7
 
-.. |coveralls| image:: https://coveralls.io/repos/sotte/pelper/badge.svg?branch=master
-    :alt: coverage
-    :target: https://coveralls.io/r/sotte/pelper?branch=master
+.. |coverage_status| image:: https://api.shippable.com/projects/572309a32a8192902e1e65c7/coverageBadge?branch=master
+    :alt: Coverage status
+    :target: https://app.shippable.com/projects/572309a32a8192902e1e65c7
 
 .. |docs| image:: https://readthedocs.org/projects/pelper/badge/?version=latest
     :alt: read the docs
     :target: http://pelper.readthedocs.org/en/latest/
 
 .. |pypi| image:: https://badge.fury.io/py/pelper.svg
+    :alt: PyPI page
     :target: https://badge.fury.io/py/pelper
 
 .. |github| image:: https://badge.fury.io/gh/sotte%2Fpelper.svg
+    :alt: Github page
     :target: https://badge.fury.io/gh/sotte%2Fpelper
-
 
 .. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
