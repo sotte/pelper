@@ -10,4 +10,4 @@ python:
 build:
   ci:
     - pip install -r requirements-dev.txt
-    - py.test --cov-report xml --cov-report term --cov pelper
+    - py.test --junitxml=shippable/testresults/unittests.xml --cov-report xml --cov-report term --cov pelper
