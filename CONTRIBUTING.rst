@@ -10,7 +10,7 @@ Development
 
 To set up `pelper` for local development:
 
-1. `Fork dedup on GitHub <https://github.com/sotte/pelper/fork>`_.
+1. `Fork pelper on GitHub <https://github.com/sotte/pelper/fork>`_.
 2. Clone your fork locally::
 
     git clone git@github.com:your_name_here/pelper.git
