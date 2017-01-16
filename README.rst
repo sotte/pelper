@@ -26,6 +26,30 @@ Pipe data through unix-like/elixir-like pipes:
     ['t', 's', 'o', 'm', 'e', 'd', 'a', ',', ' ']
 
 
+Pelper offers `p`-functions, i.e., functions where the first argument is data.
+There is ``pmap`` (like map, but works with ``pipel``):
+
+.. code:: python
+
+    >>> from pelper import pipe, pmap
+    >>> pipe(
+    ...     range(5),
+    ...     (pmap, lambda x: x*x),
+    ...     list)
+    [0, 1, 4, 9, 16]
+
+
+...and also pfilter:
+
+.. code:: python
+
+    >>> from pelper import pipe, pfilter
+    >>> pipe(
+    ...     range(5),
+    ...     (pfilter, lambda x: x > 2),
+    ...     list)
+    [3, 4]
+
 
 Take `n` elements from iterables (useful if you can't use the square bracket
 notation, e.g., if you're using pipe)
