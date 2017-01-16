@@ -21,15 +21,9 @@ from docutils.utils import get_source_line
 
 
 ###############################################################################
-# monkey patch sphinx to suppress "nonlocal image URI found" warning
-# http://stackoverflow.com/questions/12772927/specifying-an-online-image-in-sphinx-restructuredtext-format
-# https://github.com/SuperCowPowers/workbench/issues/172
-def _warn_node(self, msg, node):
-    if not msg.startswith('nonlocal image URI found:'):
-        self._warnfunc(msg, '%s:%s' % get_source_line(node))
-
-
-sphinx.environment.BuildEnvironment.warn_node = _warn_node
+# Suppress "nonlocal image URI found" warning
+# http://www.sphinx-doc.org/en/1.5.1/config.html#confval-suppress_warnings
+suppress_warnings = ['image.nonlocal_uri']
 
 
 ###############################################################################
