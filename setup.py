@@ -12,7 +12,7 @@ with open(os.path.join(os.path.dirname(__file__), "README.rst")) as f:
 setup(
     name="pelper",
 
-    version="0.0.3",
+    version="0.1.0",
 
     description="pelper - python helper functions",
     long_description=long_description,
